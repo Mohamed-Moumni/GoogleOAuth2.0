@@ -40,4 +40,15 @@ export class UsersService {
             }
         });
     }
+
+    async findAvatarByUserId(userId: string) {
+        return await this.prismaService.user.findUnique({
+            where: {
+                id: userId,
+            },
+            select: {
+                picture: true,
+            }
+        });
+    }
 }

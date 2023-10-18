@@ -22,7 +22,7 @@ export class userGuard implements CanActivate{
         const secret = this.configService.get('JWT_SECRET');
         const payload = await this.jwtService.verifyAsync(token, { secret: secret });
         const user = await this.userService.findUserByEmail(payload.email);
-        req['user'] = user;
+        req.user = user;
         return true;
    }
 }
