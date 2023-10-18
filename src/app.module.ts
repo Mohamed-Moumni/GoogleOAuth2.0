@@ -14,7 +14,8 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
     PrismaModule,
     ConfigModule.forRoot({
       isGlobal:true,
-    })],
+    }),
+],
   controllers: [AppController],
   providers: [AppService, PrismaService],
 })
