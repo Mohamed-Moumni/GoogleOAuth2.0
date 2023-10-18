@@ -13,7 +13,6 @@ export class AuthService {
     async singIn(user: any) {
         if (!user)
             throw new BadRequestException('Unauthenticated user');
-        console.log(user);
 
         let userExist = await this.userService.findUserByEmail(user.email);
 

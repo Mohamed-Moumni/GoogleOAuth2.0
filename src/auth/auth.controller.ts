@@ -17,7 +17,6 @@ export class AuthController {
     @UseGuards(GoogleOauthGuard)
     async googleAuthCallback(@Req() req: Request, @Res() res: Response) {
         const token = await this.authService.singIn(req.user);
-        console.log(token);
         res.cookie('jwt', token, {
             maxAge: 2592000000,
             sameSite: true,

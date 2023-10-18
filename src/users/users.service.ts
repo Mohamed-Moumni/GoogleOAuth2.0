@@ -34,7 +34,6 @@ export class UsersService {
     }
 
     async findUserByEmail(Email: string) {
-        console.log(Email);
         return await this.prismaService.user.findUnique({
             where: {
                 email: Email,
